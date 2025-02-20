@@ -1,170 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>haven of fallenull</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Ubuntu&display=swap" rel="stylesheet">
-    <!--@import url('https://fonts.googleapis.com/css2?family=Iosevka:wght@400;500;700&display=swap');-->
-    <style>
-        body {
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #e0e0e0;
-            font-family: 'IBM Plex Mono', monospace;
-            font-weight: 400;
-            font-style: normal;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            position: relative;
-        }
+  <meta charset="UTF-8">
+  <title>unreachabledef</title>
+  <style>
+    /* Основные стили */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a; /* Черный фон */
+      color: #fff; /* Белый цвет текста */
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      position: relative;
+      background-color: #333333
+      /* Небольшая подсветка вокруг контейнера */
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    /* Аватарка */
+    .avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden; /* Чтобы картинка не выходила за края */width: 150px;
+    }
 
-        /* Затемняющий слой */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Прозрачность затемнения */
-            z-index: 1;
-        }
-
-        .container {
-            border: 2px solid #9686ea;
-            padding: 20px;
-            width: 80%;
-            max-width: 600px;
-            text-align: left;
-            animation: fadeIn 2s forwards;
-            opacity: 0; /* Изначально невидимый */
-            z-index: 2; /* Поверх затемнения */
-            position: relative;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .blinking-cursor {
-            white-space: nowrap;
-            overflow: hidden;
-            animation: typing 1s steps(30) forwards;
-            word-wrap: break-word;  /* Разрешаем перенос слов */
-            word-break: break-word; /* Чтобы длинные слова переносились */
-            max-width: 100%; /* Ограничиваем ширину */
-            box-sizing: border-box; /* Чтобы padding не выходил за пределы */
-            font-family: 'IBM Plex Mono', monospace; /* Шрифт */
-        }
-
-
-        
-        @keyframes typing {
-            from { width: 0; } /* Начинаем с ширины 0 */
-            to { width: 100%; } /* Заканчиваем на полной ширине текста */
-        }
-
-        @keyframes blink {
-            from, to { background-color: transparent; }
-            50% { background-color: #9686ea; }
-        }
-
-        a {
-            color: #9686ea;
-            text-decoration: none;
-            font-size: 1.5rem;
-            display: block;
-            margin: 10px 0;
-            word-wrap: break-word;  /* Разрешаем перенос слов */
-            word-break: break-word; /* Чтобы длинные слова переносились */
-            max-width: 100%; /* Ограничиваем ширину */
-            box-sizing: border-box; /* Чтобы padding не выходил за пределы */
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        h1 {
-            color: #9686ea;
-            text-decoration: none;
-            font-size: 2rem;
-            display: block;
-            margin: 10px 0;
-            word-wrap: break-word;  /* Разрешаем перенос слов */
-            word-break: break-word; /* Чтобы длинные слова переносились */
-            max-width: 100%; /* Ограничиваем ширину */
-            box-sizing: border-box; /* Чтобы padding не выходил за пределы */
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        p {
-            color: #9686ea;
-            text-decoration: none;
-            font-size: 0.6rem;
-            display: block;
-            margin: 10px 0;
-            word-wrap: break-word;  /* Разрешаем перенос слов */
-            word-break: break-word; /* Чтобы длинные слова переносились */
-            max-width: 100%; /* Ограничиваем ширину */
-            box-sizing: border-box; /* Чтобы padding не выходил за пределы */
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        a::before {
-            content: "– ";
-        }
-
-        a:hover {
-            opacity: 0.7;
-        }
-
-        a:active {
-            opacity: 0.5;
-        }
-    </style>
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Масштабировать, обрезая по кругу */
+      display: block;
+    }
+    /* Биография */
+    .bio {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    /* Ссылки на соцсети */
+    .social-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 15px;
+      background-color: #FFA500;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background-color: #e69500;
+    }
+    /* Сноска с цитатой */
+    .quote {
+      position: absolute;
+      top: 20px;
+      right: 20px; /* Чтобы цитата была внутри контейнера */
+      width: 200px;
+      padding: 10px;
+      border-left: 3px solid #FFA500;
+      font-style: italic;
+      font-size: 16px;
+      color: #fff; /* Белый текст */
+    }
+    /* Адаптив для узких экранов */
+    @media (max-width: 900px) {
+      .quote {
+        position: static;
+        width: auto;
+        border-left: none;
+        border-top: 3px solid #FFA500;
+        margin-top: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container" id="linkContainer">
-        <h1 class="blinking-cursor">haven of fallenull</h1>
-        <a href="https://github.com/fallenull" target="_blank" class="blinking-cursor">Git</a>
-        <a href="https://t.me/fallenull" target="_blank" class="blinking-cursor">Telegram</a>
-        <a href="https://x.com/fallenull" target="_blank" class="blinking-cursor">X<br></a>
-        <a href="https://fallenull.github.io/aboutme.html" target="_blank" class="blinking-cursor">About me</a>
-        <p class="blinking-cursor"><br><br><br>f: "What's it like to hold the hand of someone you love? Interlinked."<br>
-
-            n: "Interlinked."<br>
-            
-            f: "Did they teach you how to feel finger to finger? Interlinked."<br>
-            
-            n: "Interlinked."<br>
-            
-            f: "Do you long for having your heart interlinked? Interlinked."<br>
-            
-            n: "Interlinked."<br>
-            
-            f: "What's it like to hold your child in your arms? Interlinked."<br>
-            
-            n: "Interlinked."</p>
-        
+  <div class="container">
+    <!-- Аватарка с именем и фамилией -->
+    <div class="avatar">
+      <img src="me.jpg"><a href="index.html"></a></img>
     </div>
-
-    <script>
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.body.style.animation = 'fadeOut 1s';
-                setTimeout(() => {
-                    window.location.href = e.target.href;
-                }, 900);
-            });
-        });
-    </script>
+    
+    <!-- Биография -->
+    <div class="bio">
+      <p>Привет! Я Ярослав Лучер – креативный и целеустремленный специалист, увлечённый технологиями, музыкой и искусством. С раннего возраста меня привлекали инновации и возможности, которые они открывают перед человечеством. Люблю решать сложные задачи и постоянно учиться новому.</p>
+      <p>В свободное время я работаю над собственными проектами, изучаю современные технологии и наслаждаюсь творческими увлечениями.</p>
+    </div>
+    
+    <!-- Ссылки на соцсети -->
+    <div class="social-links">
+      <a href="https://x.com/fallenull" target="_blank">X</a>
+      <a href="https://t.me/fallenull" target="_blank">Telegram</a>
+      <a href="https://github.com/fallenull" target="_blank">GitHub</a>
+      <a href="https://fallenull.tech/resume.html" target="blank">CV</a>
+    </div>
+    
+    <!-- Сноска с цитатой -->
+    <div class="quote">
+      "Не бойся когда ты один, бойся когда тебя два."
+    </div>
+  </div>
 </body>
 </html>
