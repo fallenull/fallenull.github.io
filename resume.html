@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>unreachabledef</title>
+  <style>
+    /* Основные стили */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a; /* Черный фон */
+      color: #fff; /* Белый цвет текста */
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      position: relative;
+      background-color: #333333
+      /* Небольшая подсветка вокруг контейнера */
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+    /* Аватарка */
+    .avatar {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden; /* Чтобы картинка не выходила за края */width: 150px;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Масштабировать, обрезая по кругу */
+      display: block;
+    }
+    /* Биография */
+    .bio {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    /* Ссылки на соцсети */
+    .social-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px 15px;
+      background-color: #FFA500;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+    .social-links a:hover {
+      transform: scale(1.1);
+      background-color: #e69500;
+    }
+    /* Сноска с цитатой */
+    .quote {
+      position: absolute;
+      top: 20px;
+      right: 20px; /* Чтобы цитата была внутри контейнера */
+      width: 200px;
+      padding: 10px;
+      border-left: 3px solid #FFA500;
+      font-style: italic;
+      font-size: 16px;
+      color: #fff; /* Белый текст */
+    }
+    /* Адаптив для узких экранов */
+    @media (max-width: 900px) {
+      .quote {
+        position: static;
+        width: auto;
+        border-left: none;
+        border-top: 3px solid #FFA500;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Аватарка с именем и фамилией -->
+    <div class="avatar">
+      <img src="me.jpg"></img>
+    </div>
+    
+    <!-- Биография -->
+    <div class="bio">
+      <hr>
+<p><strong>Yaroslav Lucher</strong> <sub>20 y.o.</sub> </p>
+<p>Yekaterinburg, Russia<br>me@fallenull.tech |  +7 (996) 076-03-69 |  </p>
+<hr>
+<h3 id="-summary-"><strong>Summary</strong></h3>
+<p>Infrastructure/Virtualization Engineer with 3+ years of experience designing and optimizing large-scale data center environments. Proven expertise in cloud platforms, automation, and mission-critical system maintenance. Seeking to contribute technical leadership to innovative US-based projects in a senior engineering role.</p>
+<hr>
+<h3 id="-work-experience-"><strong>Work Experience</strong></h3>
+<p><strong>Head of IT Infrastructure Department</strong><br>INSYS ISP | Yekaterinburg, Russia | Jul 2024 – Present  </p>
+<ul>
+<li>Lead strategic planning and implementation of ISP infrastructure supporting 20Gbps+ cloud-local network.  </li>
+<li>Designed and deployed high-performance NFS cluster for virtualized environments, improving VM data throughput by 35%.  </li>
+<li>Reduced manual operations by 50% through automation scripts (Bash/Lua) for deployment and monitoring.  </li>
+<li>Manage virtualization stack (VMware/Hyper-V/KVM) and SAN storage solutions for 500+ VMs.  </li>
+</ul>
+<p><strong>Systems Administrator</strong> (Contract Roles)<br>Various Companies | Jan 2024 – Jul 2024  </p>
+<ul>
+<li>Executed short-term infrastructure projects including network tunneling between offices and Azure/GCP hybrid cloud setups.  </li>
+<li>Modernized legacy hardware without budget increases through optimized resource allocation.  </li>
+</ul>
+<p><strong>Systems Administrator</strong><br>BAZA DEVELOPMENT | Jun 2023 – Jan 2024  </p>
+<ul>
+<li>Maintained 24/7 uptime of corporate IT stack (network, email, endpoints) during organizational restructuring.  </li>
+<li>Implemented secure email gateway and VPN-based office interconnectivity.  </li>
+<li>Single-handedly managed critical infrastructure for 3 months during team transition period.  </li>
+</ul>
+<p><strong>Hardware Servers Engineer</strong><br>Sberbank | Apr 2023 – Nov 2023  </p>
+<ul>
+<li>Coordinated with Dell EMC to recover failed server cluster, minimizing downtime by 72%.  </li>
+<li>Authored technical specifications for data center hardware upgrades.  </li>
+<li>Resolved 100+ P1/P2 incidents, including 5 cross-functional critical outages.  </li>
+</ul>
+<p><strong>Technical Support Operator</strong><br>Ural Bank of Reconstruction and Development | Jan 2023 – Apr 2023  </p>
+<ul>
+<li>Provided L2 support for banking software (Novell Directory Services).  </li>
+</ul>
+<p><em>Career breaks (2022-2023): Geopolitical circumstances in region.</em></p>
+<hr>
+<h3 id="-education-"><strong>Education</strong></h3>
+<p><strong>High School Diploma</strong> (Equivalent to US Diploma)<br>Self-Studied DevOps: Completed 120-hour &quot;DevOps for Beginners&quot; certification (Merion Academy).  </p>
+<hr>
+<h3 id="-technical-skills-"><strong>Technical Skills</strong></h3>
+<p><strong>Virtualization:</strong> VMware vSphere, Hyper-V, KVM, Proxmox<br><strong>Cloud:</strong> Azure, GCP, Yandex Cloud, Hybrid Deployments<br><strong>Networking:</strong> VPN, SD-WAN, VLAN, Firewall Configuration<br><strong>Automation:</strong> Bash, GitLab CI/CD, Ansible (Basic)<br><strong>Containers:</strong> Docker, Kubernetes (Managed Clusters)<br><strong>OS:</strong> Linux (CentOS/Ubuntu), Windows Server  </p>
+<hr>
+<h3 id="-additional-"><strong>Additional</strong></h3>
+<ul>
+<li><strong>Languages:</strong> English (C1 – Fluent, Technical Documentation/Conversation), Russian (Native)  </li>
+<li><strong>Visa:</strong> Eligible for US work visa sponsorship  </li>
+<li><strong>Soft Skills:</strong> Cross-team collaboration, Incident Management, Stress Resilience  </li>
+</ul>
+<hr>
+<h3 id="-key-achievements-"><strong>Key Achievements</strong></h3>
+<ul>
+<li>Recovered $1.2M server cluster through vendor partnership (Sberbank).  </li>
+<li>Maintained 99.98% uptime during organizational crisis (BAZA DEVELOPMENT).  </li>
+<li>Reduced VM provisioning time from 4h to 15min via automation (INSYS ISP).  :</li>
+</ul>
+
+
+    </div>
+    
+    <!-- Ссылки на соцсети -->
+    <div class="social-links">
+      <a href="https://x.com/fallenull" target="_blank">X</a>
+      <a href="https://t.me/fallenull" target="_blank">Telegram</a>
+      <a href="https://github.com/fallenull" target="_blank">GitHub</a>
+      <a href="https://fallenull.tech" target="_blank">Index</a>
+    </div>
+    
+    <!-- Сноска с цитатой -->
+    <div class="quote">
+      "Don’t be afraid when you're alone. Be afraid when there’s two of you."
+    </div>
+  </div>
+</body>
+</html>
